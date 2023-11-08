@@ -1,0 +1,13 @@
+body {
+  background-color: #404040;
+  color: white;
+}
+
+.App {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #f06c00;
+};
