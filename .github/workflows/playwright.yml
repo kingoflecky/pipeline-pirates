@@ -13,11 +13,11 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - uses: jfrog/setup-jfrog-cli@v1
-    - run: jfrog --version
 
     - name: Install dependencies
-      run: npm i
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npm ci
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
