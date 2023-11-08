@@ -8,7 +8,12 @@
 
 .user-info {
     display: inline-flex;
-    justify-content: space-between;
+    flex-direction: column
+}
+
+.check-username {
+    display: inline-flex;
+    flex-direction: column;
 }
 
 #welcome-user{

@@ -4,13 +4,15 @@ import Dashboard from "./components/Dashboard";
 import './App.css'
 import Header from "./components/Header";
 
+
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     // Check if the user is logged in by checking for a username in localStorage
     const username = localStorage.getItem("username");
-    if (username) {
+    const password = localStorage.getItem("password");
+    if (username && password) {
       setIsLoggedIn(true);
     }
   }, []);
