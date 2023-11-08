@@ -9,12 +9,23 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (!username) {
+      setError("Please enter a valid username");
+      return;
+    }
+
+    if (!password) {
+      setError("Please enter a valid password");
+      return;
+    }
+
     try {
       // Perform custom authentication logic here
       // This could involve verifying credentials against a local database or an external authentication service
 
       // If authentication is successful, store the user's information in localStorage
       localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
       localStorage.setItem("accessToken", "YOUR_CUSTOM_ACCESS_TOKEN");
 
       // Redirect the user to the dashboard
