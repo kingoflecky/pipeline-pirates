@@ -1,0 +1,16 @@
+.header-wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin: 10px 15px 0 15px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.user-info {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+#welcome-user{
+    margin-right: 15px;
+}

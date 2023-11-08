@@ -6,27 +6,8 @@ body {
 .App {
   padding: 20px;
   font-family: 'Mary Ann', Arial, Helvetica, sans-serif;
-}
-
-h1 {
-  text-align: center;
-  color: #f06c00;
-  font-weight: bold;
-}
-
-.dashboard-wrapper {
-  display: grid;
-  grid-template-areas:
-    "header header header "
-    "main main main "
-    "footer footer footer";
-  gap: 10px;
-  padding: 10px;
-  border: white;
-}
-
-.response-wrapper {
-  display: inline-flex;
-  flex-direction: column;
-  margin: 0 20px;
+  background-color: #404040;
+  color: white;
+  max-width: 100%;
+  margin: 0 0.5rem;
 }
