@@ -38,3 +38,11 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
+    - name: Upload newman Report 
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+          name: newman report
+          path: newman/
+          retention-days: 30
