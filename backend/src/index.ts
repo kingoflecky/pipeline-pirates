@@ -1,6 +1,6 @@
 import express from 'express'
 const app = express()
-const port = 3000
+const port = 3001
 import { validateJiraTicket } from './services/validator-service'
 
 app.use(express.json());
