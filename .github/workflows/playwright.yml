@@ -22,9 +22,6 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    - name: Run frontend UI
-      run: npm start
-
     - name: Run Playwright tests
       run: npx playwright test
 
