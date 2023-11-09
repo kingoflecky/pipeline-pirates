@@ -4,12 +4,12 @@ import { validateJiraTicket } from '../services/validator-service';
 const validatorRouter: Router = Router();
 
 export default validatorRouter.get('/validate', async (req: Request, res: Response) => {
-    console.log('beginning Validation')
+  console.log('beginning Validation');
 
-    if(req.body == undefined){
-        return 400
- }
-    const result = await validateJiraTicket(req.body) 
+  if (req.body == undefined) {
+    return 400;
+  }
+  const result = await validateJiraTicket(req.body);
 
   if (result !== 201) {
     res.send('Jira ticket is valid');
@@ -17,3 +17,4 @@ export default validatorRouter.get('/validate', async (req: Request, res: Respon
     res.send('Jira ticket is not valid');
   }
 });
+
