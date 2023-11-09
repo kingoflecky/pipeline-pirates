@@ -1,10 +1,10 @@
 import { Request, Response, Router } from 'express';
 import { validateJiraTicket } from '../services/validator-service';
 
-export const validatorRouter: Router = Router();
+export const submitRouter: Router = Router();
 
-validatorRouter.get('/v1/validate', async (req: Request, res: Response) => {
-  console.log('beginning Validation');
+submitRouter.get('/v1/submit', async (req: Request, res: Response) => {
+  console.log('beginning submit');
 
   if (req.body == undefined) {
     return 400;
