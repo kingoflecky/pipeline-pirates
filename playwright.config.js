@@ -70,12 +70,19 @@ module.exports = defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: 
+  webServer: [
     {
-      command: 'npm run start',
+      command: 'npm run backend',
       url: 'http://127.0.0.1:3001',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
     },
+    {
+      command: 'npm run frontend',
+      url: 'http://127.0.0.1:3000',
+      timeout: 120 * 1000,
+      reuseExistingServer: !process.env.CI,
+    }
+  ],
 });
 
