@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "concurrently": "^8.2.2",
+    "newman": "^6.0.0",
+    "newman-reporter-htmlextra": "^1.22.11",
     "playwright": "^1.39.0"
   },
   "devDependencies": {
@@ -7,6 +10,9 @@
     "@types/node": "^20.9.0"
   },
   "scripts": {
-    "start": "cd ./frontend && npm start"
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "frontend": "cd ./frontend && npm start",
+    "backend": "cd ./backend && npm run dev ",
+    "postman": "newman run ./tests/postman/collection/Pipeline_Pirates.postman_collection.json -e ./tests/postman/environment/DEV.postman_environment.json -r htmlextra,cli "
   }
 }

@@ -15,16 +15,34 @@ jobs:
         node-version: 16
 
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --force
 
     - name: Install frontend
       run: cd ./frontend && npm ci
 
+    - name: Install backend
+      run: cd ./backend && npm ci
+
+    - name: Start backend server
+      run: |
+            cd ./backend
+            npm run dev &
+            disown
+
+    - name: Start frontend server
+      run: |
+            cd ./frontend
+            npm start &
+            disown
+    
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
       run: npx playwright test
+
+    - name: Run postman tests
+      run: npm run postman
 
     - uses: actions/upload-artifact@v3
       if: always()
@@ -32,3 +50,11 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
+    - name: Upload newman Report 
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+          name: newman report
+          path: newman/
+          retention-days: 30
