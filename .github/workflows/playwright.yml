@@ -20,11 +20,17 @@ jobs:
     - name: Install frontend
       run: cd ./frontend && npm ci
 
+    - name: Install backend
+      run: cd ./backend && npm ci
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
       run: npx playwright test
+
+    - name: Run postman tests
+      run: npm run postman
 
     - uses: actions/upload-artifact@v3
       if: always()
