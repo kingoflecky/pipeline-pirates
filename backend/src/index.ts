@@ -4,7 +4,7 @@ const port = 3001;
 import { validateJiraTicket } from './services/validator-service';
 
 app.use(express.json());
-app.get('/validate', async (req, res) => {
+app.get('/v1/validate', async (req, res) => {
   console.log('beginning Validation');
 
   if (req.body === undefined) {
