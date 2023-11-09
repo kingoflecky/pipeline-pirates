@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import './App.css'
+import "./App.css";
 import Header from "./components/Header";
-
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
