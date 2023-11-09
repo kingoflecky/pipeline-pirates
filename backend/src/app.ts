@@ -1,7 +1,9 @@
-const express = require('express');
+import express from 'express';
+import { submitRouter } from './routes/submit-route';
+export const app = express();
 
-const app = express();
-const port = process.env.PORT || 3000;
+export const routes = express.Router();
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.use(express.json());
+app.use(submitRouter);
 
